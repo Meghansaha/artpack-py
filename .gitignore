@@ -11,3 +11,20 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# uv/pip
+uv.lock
+.python-version
