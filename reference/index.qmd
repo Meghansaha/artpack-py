@@ -6,4 +6,4 @@ Functions that help with color-related tasks
 
 | | |
 | --- | --- |
-| [art_pals](art_pals.qmd#artpack.art_pals) | The artpack palette picker. The `art_pals` function consists of 18 palettes. |
+| [art_pals](art_pals.qmd#artpack.art_pals) |     The artpack palette picker. The `art_pals` function consists of 18 palettes. |

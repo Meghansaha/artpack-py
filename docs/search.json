@@ -4,77 +4,76 @@
     "href": "reference/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes.",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
+    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes."
   },
   {
     "objectID": "reference/index.html#data-color-palette-tools",
     "href": "reference/index.html#data-color-palette-tools",
     "title": "Function reference",
     "section": "",
-    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes.",
-    "crumbs": [
-      "Reference",
-      "Function reference"
-    ]
+    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "artpack",
     "section": "",
-    "text": "Create data that displays generative art when mapped into a plotnine plot."
+    "text": "Python port of the R package artpack, bringing generative art color palettes to the Python ecosystem."
+  },
+  {
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "artpack",
+    "section": "About",
+    "text": "About\nartpack provides curated color palettes designed for generative art and data visualization. This is a work-in-progress port of the original R package."
   },
   {
     "objectID": "index.html#installation",
     "href": "index.html#installation",
     "title": "artpack",
     "section": "Installation",
-    "text": "Installation\npip install artpack"
+    "text": "Installation\npip install artpack-py"
   },
   {
-    "objectID": "index.html#features",
-    "href": "index.html#features",
+    "objectID": "index.html#development-status",
+    "href": "index.html#development-status",
     "title": "artpack",
-    "section": "Features",
-    "text": "Features\n\nSpecialized data frame creation for geometric shapes\nArtistic color palettes\nGeometric transformations\nGenerative art utilities"
+    "section": "Development Status",
+    "text": "Development Status\n🚧 Work in Progress - Currently porting core functionality from the R version. More features coming soon!\nCurrently implemented:\n\n✅ Color palette generation (art_pals())\n✅ 100% test coverage\n✅ CI/CD with GitHub Actions\n\n🛣️ Roadmap:\n\nAdditional color palette tools (Functions that help with color-related tasks.)\nAsset creation (Functions that help with making data for generative art.)\nGeometric testing tools (Functions that help with geometric/spatial analysis for generative art.)\nGrouping tools (Functions that help with grouping generative art data.)\nSequencing tools (Functions that help with numeric sequencing.)\nTransformation tools (Functions that help with transforming existing generative art data.)"
   },
   {
-    "objectID": "index.html#quick-example",
-    "href": "index.html#quick-example",
+    "objectID": "index.html#links",
+    "href": "index.html#links",
     "title": "artpack",
-    "section": "Quick Example",
-    "text": "Quick Example\n```{python}\nimport artpack\nimport plotnine as p9\n\n# Your example code here\n```"
+    "section": "Links",
+    "text": "Links\n\nPython Package (PyPI): artpack-py\nOriginal R Package (CRAN): artpack\nGitHub Repository: github.com/Meghansaha/artpack-py"
   },
   {
     "objectID": "reference/art_pals.html",
     "href": "reference/art_pals.html",
     "title": "art_pals",
     "section": "",
-    "text": "art_pals(pal='ocean', n=5, direction='regular', randomize=False)\nThe artpack palette picker. The art_pals function consists of 18 palettes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npal\nstr\nA character string of the desired artpack palette. Default is “ocean”. The 18 artpack palettes include: • “arctic” - Icy blue and white colors • “beach” - Sand-colored tans and ocean-colored blue colors • “bw” - A gradient of black to white colors • “brood” - A gradient of different shades of dark gray and black colors • “cosmos” - Nebula-inspired blue, purple, and pink colors • “explorer” - Pokemon-type inspired colors • “gemstones” - Birthstone/Mineral-inspired colors • “grays” - A gradient of dark, medium, and light gray colors • “icecream” - A light pastel palette of cream, blue, brown, and pink colors • “imagination” - 90’s school supply-inspired colors • “majestic” - Shades of majestic purple colors • “nature” - A mix of tan, brown, green, and red colors • “neon” - A neon spectrum of rainbow colors • “ocean” - A gradient of dark to light blue colors • “plants” - A gradient of dark to light green colors • “rainbow” - A vibrant mix of rainbow colors • “sunnyside” - A retro-inspired mix of pink, orange, and yellow colors • “super” - A marveling mix of heroic colors\n'ocean'\n\n\nn\nint\nThe number of colors desired in the output. Default is 5. Must be a positive integer with a value greater than 0.\n5\n\n\ndirection\nstr\nThe direction of the palette. Default is “regular”. Options: “regular”, “reg”, “reverse”, “rev”\n'regular'\n\n\nrandomize\nbool\nDetermines if the colors in the palette appear in a randomized order. Default is False.\nFalse\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist of str\nA list of hexadecimal color codes.\n\n\n\n\n\n\n&gt;&gt;&gt; colors = art_pals(\"rainbow\", n=5)\n&gt;&gt;&gt; len(colors)\n5"
+    "text": "art_pals(pal='ocean', n=5, direction='regular', randomize=False)\nThe artpack palette picker. The `art_pals` function consists of 18 palettes.\n\n\npal : str, optional\n    A character string of the desired artpack palette. Default is \"ocean\".\n\n    The 18 artpack palettes include:\n\n    - \"arctic\" - Icy blue and white colors\n    - \"beach\" - Sand-colored tans and ocean-colored blue colors\n    - \"bw\" - A gradient of black to white colors\n    - \"brood\" - A gradient of different shades of dark gray and black colors\n    - \"cosmos\" - Nebula-inspired blue, purple, and pink colors\n    - \"explorer\" - Pokemon-type inspired colors\n    - \"gemstones\" - Birthstone/Mineral-inspired colors\n    - \"grays\" - A gradient of dark, medium, and light gray colors\n    - \"icecream\" - A light pastel palette of cream, blue, brown, and pink colors\n    - \"imagination\" - 90's school supply-inspired colors\n    - \"majestic\" - Shades of majestic purple colors\n    - \"nature\" - A mix of tan, brown, green, and red colors\n    - \"neon\" - A neon spectrum of rainbow colors\n    - \"ocean\" - A gradient of dark to light blue colors\n    - \"plants\" - A gradient of dark to light green colors\n    - \"rainbow\" - A vibrant mix of rainbow colors\n    - \"sunnyside\" - A retro-inspired mix of pink, orange, and yellow colors\n    - \"super\" - A marveling mix of heroic colors\n\nn : int, optional\n    The number of colors desired in the output. Default is 5.\n    Must be a positive integer with a value greater than 0.\n\ndirection : str, optional\n    The direction of the palette. Default is \"regular\".\n    Options: \"regular\", \"reg\", \"reverse\", \"rev\"\n\nrandomize : bool, optional\n    Determines if the colors in the palette appear in a randomized order.\n    Default is False.\n\n\n\nlist of str\n    A list of hexadecimal color codes.\n\n\n\n### Import Modules------\nimport plotnine as p9\nfrom polars import DataFrame\nfrom artpack import art_pals\n\n### Data Creation------\nn_pal = 10\n\ndf_dots = DataFrame(\n    {\"x\": range(1, n_pal + 1), \"y\": [2.5] * n_pal, \"fills\": art_pals(\"rainbow\", n_pal)}\n)\n\n### Plot data to see colors------\n(\n    p9.ggplot(data=df_dots, mapping=p9.aes(\"x\", \"y\"))\n    + p9.theme_void()\n    + p9.geom_point(\n        shape=\"s\", fill=df_dots[\"fills\"].to_list(), color=\"#000000\", size=10, stroke=2\n    )\n)"
   },
   {
     "objectID": "reference/art_pals.html#parameters",
     "href": "reference/art_pals.html#parameters",
     "title": "art_pals",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\npal\nstr\nA character string of the desired artpack palette. Default is “ocean”. The 18 artpack palettes include: • “arctic” - Icy blue and white colors • “beach” - Sand-colored tans and ocean-colored blue colors • “bw” - A gradient of black to white colors • “brood” - A gradient of different shades of dark gray and black colors • “cosmos” - Nebula-inspired blue, purple, and pink colors • “explorer” - Pokemon-type inspired colors • “gemstones” - Birthstone/Mineral-inspired colors • “grays” - A gradient of dark, medium, and light gray colors • “icecream” - A light pastel palette of cream, blue, brown, and pink colors • “imagination” - 90’s school supply-inspired colors • “majestic” - Shades of majestic purple colors • “nature” - A mix of tan, brown, green, and red colors • “neon” - A neon spectrum of rainbow colors • “ocean” - A gradient of dark to light blue colors • “plants” - A gradient of dark to light green colors • “rainbow” - A vibrant mix of rainbow colors • “sunnyside” - A retro-inspired mix of pink, orange, and yellow colors • “super” - A marveling mix of heroic colors\n'ocean'\n\n\nn\nint\nThe number of colors desired in the output. Default is 5. Must be a positive integer with a value greater than 0.\n5\n\n\ndirection\nstr\nThe direction of the palette. Default is “regular”. Options: “regular”, “reg”, “reverse”, “rev”\n'regular'\n\n\nrandomize\nbool\nDetermines if the colors in the palette appear in a randomized order. Default is False.\nFalse"
+    "text": "pal : str, optional\n    A character string of the desired artpack palette. Default is \"ocean\".\n\n    The 18 artpack palettes include:\n\n    - \"arctic\" - Icy blue and white colors\n    - \"beach\" - Sand-colored tans and ocean-colored blue colors\n    - \"bw\" - A gradient of black to white colors\n    - \"brood\" - A gradient of different shades of dark gray and black colors\n    - \"cosmos\" - Nebula-inspired blue, purple, and pink colors\n    - \"explorer\" - Pokemon-type inspired colors\n    - \"gemstones\" - Birthstone/Mineral-inspired colors\n    - \"grays\" - A gradient of dark, medium, and light gray colors\n    - \"icecream\" - A light pastel palette of cream, blue, brown, and pink colors\n    - \"imagination\" - 90's school supply-inspired colors\n    - \"majestic\" - Shades of majestic purple colors\n    - \"nature\" - A mix of tan, brown, green, and red colors\n    - \"neon\" - A neon spectrum of rainbow colors\n    - \"ocean\" - A gradient of dark to light blue colors\n    - \"plants\" - A gradient of dark to light green colors\n    - \"rainbow\" - A vibrant mix of rainbow colors\n    - \"sunnyside\" - A retro-inspired mix of pink, orange, and yellow colors\n    - \"super\" - A marveling mix of heroic colors\n\nn : int, optional\n    The number of colors desired in the output. Default is 5.\n    Must be a positive integer with a value greater than 0.\n\ndirection : str, optional\n    The direction of the palette. Default is \"regular\".\n    Options: \"regular\", \"reg\", \"reverse\", \"rev\"\n\nrandomize : bool, optional\n    Determines if the colors in the palette appear in a randomized order.\n    Default is False."
   },
   {
     "objectID": "reference/art_pals.html#returns",
     "href": "reference/art_pals.html#returns",
     "title": "art_pals",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\nlist of str\nA list of hexadecimal color codes."
+    "text": "list of str\n    A list of hexadecimal color codes."
   },
   {
     "objectID": "reference/art_pals.html#examples",
     "href": "reference/art_pals.html#examples",
     "title": "art_pals",
     "section": "",
-    "text": "&gt;&gt;&gt; colors = art_pals(\"rainbow\", n=5)\n&gt;&gt;&gt; len(colors)\n5"
+    "text": "### Import Modules------\nimport plotnine as p9\nfrom polars import DataFrame\nfrom artpack import art_pals\n\n### Data Creation------\nn_pal = 10\n\ndf_dots = DataFrame(\n    {\"x\": range(1, n_pal + 1), \"y\": [2.5] * n_pal, \"fills\": art_pals(\"rainbow\", n_pal)}\n)\n\n### Plot data to see colors------\n(\n    p9.ggplot(data=df_dots, mapping=p9.aes(\"x\", \"y\"))\n    + p9.theme_void()\n    + p9.geom_point(\n        shape=\"s\", fill=df_dots[\"fills\"].to_list(), color=\"#000000\", size=10, stroke=2\n    )\n)"
   }
 ]

@@ -30,3 +30,13 @@ uv.lock
 .python-version
 
 /.quarto/
+
+# Quarto output
+docs/
+
+# Development files
+dev/
+
+# Assets (if these are generated/temporary)
+assets/
+
