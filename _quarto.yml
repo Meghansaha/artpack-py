@@ -15,8 +15,6 @@ website:
         file: index.qmd
       - text: "Reference"
         file: reference/index.qmd
-      - text: "Get Started"
-        file: get-started.qmd
     right:
       - icon: github
         href: https://github.com/Meghansaha/artpack-py
@@ -33,7 +31,7 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    #css: styles.css
     toc: true
     code-copy: true
 
