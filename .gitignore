@@ -1,38 +1,10 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-*.pypirc
-.pypitoken
 
-# Virtual environments
-.venv
-.env
-
-# Testing
-.coverage
-.pytest_cache/
-htmlcov/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
-# uv/pip
-uv.lock
-.python-version
-
+# Quarto internals
 /.quarto/
-
-
-# Development files
-dev/
-
-
