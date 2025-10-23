@@ -1,0 +1,27 @@
+---
+title: "artpack"
+---
+
+Create data that displays generative art when mapped into a plotnine plot.
+
+## Installation
+
+```bash
+pip install artpack
+```
+
+## Features
+
+- Specialized data frame creation for geometric shapes
+- Artistic color palettes
+- Geometric transformations
+- Generative art utilities
+
+## Quick Example
+
+```{{python}}
+import artpack
+import plotnine as p9
+
+# Your example code here
+```

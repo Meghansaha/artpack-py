@@ -1,0 +1,80 @@
+[
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes.",
+    "crumbs": [
+      "Reference",
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "reference/index.html#data-color-palette-tools",
+    "href": "reference/index.html#data-color-palette-tools",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions that help with color-related tasks\n\n\n\nart_pals\nThe artpack palette picker. The art_pals function consists of 18 palettes.",
+    "crumbs": [
+      "Reference",
+      "Function reference"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "artpack",
+    "section": "",
+    "text": "Create data that displays generative art when mapped into a plotnine plot."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "artpack",
+    "section": "Installation",
+    "text": "Installation\npip install artpack"
+  },
+  {
+    "objectID": "index.html#features",
+    "href": "index.html#features",
+    "title": "artpack",
+    "section": "Features",
+    "text": "Features\n\nSpecialized data frame creation for geometric shapes\nArtistic color palettes\nGeometric transformations\nGenerative art utilities"
+  },
+  {
+    "objectID": "index.html#quick-example",
+    "href": "index.html#quick-example",
+    "title": "artpack",
+    "section": "Quick Example",
+    "text": "Quick Example\n```{python}\nimport artpack\nimport plotnine as p9\n\n# Your example code here\n```"
+  },
+  {
+    "objectID": "reference/art_pals.html",
+    "href": "reference/art_pals.html",
+    "title": "art_pals",
+    "section": "",
+    "text": "art_pals(pal='ocean', n=5, direction='regular', randomize=False)\nThe artpack palette picker. The art_pals function consists of 18 palettes.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\npal\nstr\nA character string of the desired artpack palette. Default is “ocean”. The 18 artpack palettes include: • “arctic” - Icy blue and white colors • “beach” - Sand-colored tans and ocean-colored blue colors • “bw” - A gradient of black to white colors • “brood” - A gradient of different shades of dark gray and black colors • “cosmos” - Nebula-inspired blue, purple, and pink colors • “explorer” - Pokemon-type inspired colors • “gemstones” - Birthstone/Mineral-inspired colors • “grays” - A gradient of dark, medium, and light gray colors • “icecream” - A light pastel palette of cream, blue, brown, and pink colors • “imagination” - 90’s school supply-inspired colors • “majestic” - Shades of majestic purple colors • “nature” - A mix of tan, brown, green, and red colors • “neon” - A neon spectrum of rainbow colors • “ocean” - A gradient of dark to light blue colors • “plants” - A gradient of dark to light green colors • “rainbow” - A vibrant mix of rainbow colors • “sunnyside” - A retro-inspired mix of pink, orange, and yellow colors • “super” - A marveling mix of heroic colors\n'ocean'\n\n\nn\nint\nThe number of colors desired in the output. Default is 5. Must be a positive integer with a value greater than 0.\n5\n\n\ndirection\nstr\nThe direction of the palette. Default is “regular”. Options: “regular”, “reg”, “reverse”, “rev”\n'regular'\n\n\nrandomize\nbool\nDetermines if the colors in the palette appear in a randomized order. Default is False.\nFalse\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nlist of str\nA list of hexadecimal color codes.\n\n\n\n\n\n\n&gt;&gt;&gt; colors = art_pals(\"rainbow\", n=5)\n&gt;&gt;&gt; len(colors)\n5"
+  },
+  {
+    "objectID": "reference/art_pals.html#parameters",
+    "href": "reference/art_pals.html#parameters",
+    "title": "art_pals",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\npal\nstr\nA character string of the desired artpack palette. Default is “ocean”. The 18 artpack palettes include: • “arctic” - Icy blue and white colors • “beach” - Sand-colored tans and ocean-colored blue colors • “bw” - A gradient of black to white colors • “brood” - A gradient of different shades of dark gray and black colors • “cosmos” - Nebula-inspired blue, purple, and pink colors • “explorer” - Pokemon-type inspired colors • “gemstones” - Birthstone/Mineral-inspired colors • “grays” - A gradient of dark, medium, and light gray colors • “icecream” - A light pastel palette of cream, blue, brown, and pink colors • “imagination” - 90’s school supply-inspired colors • “majestic” - Shades of majestic purple colors • “nature” - A mix of tan, brown, green, and red colors • “neon” - A neon spectrum of rainbow colors • “ocean” - A gradient of dark to light blue colors • “plants” - A gradient of dark to light green colors • “rainbow” - A vibrant mix of rainbow colors • “sunnyside” - A retro-inspired mix of pink, orange, and yellow colors • “super” - A marveling mix of heroic colors\n'ocean'\n\n\nn\nint\nThe number of colors desired in the output. Default is 5. Must be a positive integer with a value greater than 0.\n5\n\n\ndirection\nstr\nThe direction of the palette. Default is “regular”. Options: “regular”, “reg”, “reverse”, “rev”\n'regular'\n\n\nrandomize\nbool\nDetermines if the colors in the palette appear in a randomized order. Default is False.\nFalse"
+  },
+  {
+    "objectID": "reference/art_pals.html#returns",
+    "href": "reference/art_pals.html#returns",
+    "title": "art_pals",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nlist of str\nA list of hexadecimal color codes."
+  },
+  {
+    "objectID": "reference/art_pals.html#examples",
+    "href": "reference/art_pals.html#examples",
+    "title": "art_pals",
+    "section": "",
+    "text": "&gt;&gt;&gt; colors = art_pals(\"rainbow\", n=5)\n&gt;&gt;&gt; len(colors)\n5"
+  }
+]

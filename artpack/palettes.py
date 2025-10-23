@@ -115,28 +115,29 @@ def art_pals(
     Parameters
     ----------
     pal : str, optional
-        A character string of the desired artpack palette. Default is "ocean".
+        A character string of the desired artpack palette. Default is "ocean".<br>
 
-        The 18 artpack palettes include:
-        - "arctic" - Icy blue and white colors
-        - "beach" - Sand-colored tans and ocean-colored blue colors
-        - "bw" - A gradient of black to white colors
-        - "brood" - A gradient of different shades of dark gray and black colors
-        - "cosmos" - Nebula-inspired blue, purple, and pink colors
-        - "explorer" - Pokemon-type inspired colors
-        - "gemstones" - Birthstone/Mineral-inspired colors
-        - "grays" - A gradient of dark, medium, and light gray colors
-        - "icecream" - A light pastel palette of cream, blue, brown, and pink colors
-        - "imagination" - 90's school supply-inspired colors
-        - "majestic" - Shades of majestic purple colors
-        - "nature" - A mix of tan, brown, green, and red colors
-        - "neon" - A neon spectrum of rainbow colors
-        - "ocean" - A gradient of dark to light blue colors
-        - "plants" - A gradient of dark to light green colors
-        - "rainbow" - A vibrant mix of rainbow colors
-        - "sunnyside" - A retro-inspired mix of pink, orange, and yellow colors
-        - "super" - A marveling mix of heroic colors
+        The 18 artpack palettes include:<br>
 
+        &#x2022; "arctic" - Icy blue and white colors<br>
+        &#x2022; "beach" - Sand-colored tans and ocean-colored blue colors<br>
+        &#x2022; "bw" - A gradient of black to white colors<br>
+        &#x2022; "brood" - A gradient of different shades of dark gray and black colors<br>
+        &#x2022; "cosmos" - Nebula-inspired blue, purple, and pink colors<br>
+        &#x2022; "explorer" - Pokemon-type inspired colors<br>
+        &#x2022; "gemstones" - Birthstone/Mineral-inspired colors<br>
+        &#x2022; "grays" - A gradient of dark, medium, and light gray colors<br>
+        &#x2022; "icecream" - A light pastel palette of cream, blue, brown, and pink colors<br>
+        &#x2022; "imagination" - 90's school supply-inspired colors<br>
+        &#x2022; "majestic" - Shades of majestic purple colors<br>
+        &#x2022; "nature" - A mix of tan, brown, green, and red colors<br>
+        &#x2022; "neon" - A neon spectrum of rainbow colors<br>
+        &#x2022; "ocean" - A gradient of dark to light blue colors<br>
+        &#x2022; "plants" - A gradient of dark to light green colors<br>
+        &#x2022; "rainbow" - A vibrant mix of rainbow colors<br>
+        &#x2022; "sunnyside" - A retro-inspired mix of pink, orange, and yellow colors<br>
+        &#x2022; "super" - A marveling mix of heroic colors
+        
     n : int, optional
         The number of colors desired in the output. Default is 5.
         Must be a positive integer with a value greater than 0.
