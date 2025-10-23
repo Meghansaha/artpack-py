@@ -12,9 +12,9 @@ website:
     background: primary
     left:
       - text: "Home"
-        file: index.qmd
+        href: index.qmd
       - text: "Reference"
-        file: reference/index.qmd
+        href: reference/index.qmd
     right:
       - icon: github
         href: https://github.com/Meghansaha/artpack-py
@@ -29,9 +29,7 @@ format:
     code-block-bg: "#dddcf5"
     code-block-border-left: true
     grid:
-      body-width: 900px
       sidebar-width: 250px
-      margin-width: 250px
     responsive: true
     
 quartodoc:
