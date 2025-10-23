@@ -156,9 +156,33 @@ def art_pals(
 
     Examples
     --------
-    >>> colors = art_pals("rainbow", n=5)
-    >>> len(colors)
-    5
+    ```python
+    # Import Modules------
+    import plotnine as p9
+    from polars import DataFrame
+    from artpack import art_pals
+
+    # Data Creation------
+    n_pal = 10
+
+    df_dots = DataFrame(
+        {"x": range(1, n_pal + 1), "y": [2.5] * n_pal, "fills": art_pals("rainbow", n_pal)}
+    )
+
+    # Plot data to see colors------
+    (
+        p9.ggplot(data=df_dots, mapping=p9.aes("x", "y"))
+        + p9.theme_void()
+        + p9.geom_point(
+                shape="s",
+                fill=df_dots["fills"].to_list(),
+                color="#000000",
+                size=10,
+                stroke=2
+                )
+    )
+    ```
+    ![artpack palettes]()
     """
 
     ###############################################################################
