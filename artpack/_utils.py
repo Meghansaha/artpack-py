@@ -1,6 +1,7 @@
 """Internal utility functions for artpack."""
 
 import re
+from typing import Any
 from matplotlib import colors as mcolors
 
 ###############################################################################
@@ -8,32 +9,39 @@ from matplotlib import colors as mcolors
 ###############################################################################
 
 
-def _check_type(param=None, expected_type: str = None) -> bool:
-    """_summary_
+def _check_type(param: Any, expected_type: str) -> bool:
+    """Internal type checker for dev
 
     Parameters
     ----------
-    param : _type_, optional
-        _description_, by default None
-    expected_type : str, optional
-        _description_, by default None
+    param : Any, required
+        Object to check the type of
+    expected_type : str, required
+        A string value of the expected type to check `param` for.
 
     Returns
     -------
     bool
-        _description_
-
-    Raises
-    ------
-    TypeError
-        _description_
-    ValueError
-        _description_
-    ValueError
-        _description_
-    ValueError
-        _description_
+        Returns True if `param` matches the `expected_type`. Otherwise, will return False.
     """
+
+    dict_types = (
+        "int",
+        "float",
+        "complex",
+        "bool",
+        "str",
+        "tuple",
+        "list",
+        "polars.dataframe.frame.DataFrame",
+        "pandas.core.frame.DataFrame",
+    )
+
+    if expected_type not in dict_types:
+        raise ValueError(
+            f"expected_type most be one of: {', '.join(dict_types)}. "
+            f"You've supplied: {expected_type}"
+        )
 
 
 ###############################################################################
