@@ -9,20 +9,28 @@ from matplotlib import colors as mcolors
 ###############################################################################
 
 
-def _check_type(param: Any, expected_type: str) -> bool:
-    """Internal type checker for dev
+def _check_type(param_name: str, param: Any, expected_type: str) -> bool:
+    """
+    Internal type checker for dev. Raises if invalid.
 
     Parameters
     ----------
+    param_name : str, required
+        Name of the parameter to be checked in the parent function.
     param : Any, required
         Object to check the type of
     expected_type : str, required
         A string value of the expected type to check `param` for.
 
+    Raises
+    ------
+    ValueError
+        If type of `param` does not match the `expected_type` value.
+
     Returns
     -------
     bool
-        Returns True if `param` matches the `expected_type`. Otherwise, will return False.
+        Returns True if `param` matches the `expected_type`. Otherwise, will raise.
     """
 
     dict_types = (
@@ -44,62 +52,47 @@ def _check_type(param: Any, expected_type: str) -> bool:
         )
 
 
+# PICK UP HERE. Add type check and finish doc string cleanup for others.
+
+
 ###############################################################################
 # Color validation
 ###############################################################################
 
 
-def is_valid_color(color: str) -> bool:
+def _is_valid_color(param_name: str, color: str):
     """
-    Check if a string is a valid color specification.
-
-    Accepts hex colors (#RRGGBB or #RGB) and named matplotlib colors.
+    Internal check to validate color string (hex or matplotlib named). Raises if invalid.
 
     Parameters
     ----------
+    param_name : str
+        Name of the color parameter to be checked in the parent function
+
     color : str
         Color string to validate
-
-    Returns
-    -------
-    bool
-        True if valid color, False otherwise
-    """
-    if not isinstance(color, str):
-        type_input = type(color)
-
-        raise TypeError(f"color should be of  string")
-        return False
-
-    # Check if it's a valid hex color (6 or 3 digits)
-    hex_pattern = r"^#(?:[0-9a-fA-F]{3}){1,2}$"
-    if re.match(hex_pattern, color):
-        return True
-
-    # Check if it's a named matplotlib color
-    if color.lower() in mcolors.CSS4_COLORS:
-        return True
-
-    return False
-
-
-def validate_color(color: str, param_name: str = "color") -> None:
-    """
-    Validate a color parameter and raise ValueError if invalid.
-
-    Parameters
-    ----------
-    color : str
-        Color string to validate
-    param_name : str, default "color"
-        Name of the parameter for error messages
 
     Raises
     ------
     ValueError
-        If color is not valid
+        If color is not a valid hexadecimal webcolor or a named matplotlib color.
+
     """
-    if not is_valid_color(color):
+    if not isinstance(color, str):
+        type_input = type(color)
+
+        raise TypeError(
+            f"{param_name} should be a string. " f"You've supplied a {type_input}"
+        )
+
+    # Check if it's a valid hex color (6 or 3 digits)
+    hex_color = r"^#(?:[0-9a-fA-F]{3}){1,2}$"
+    invalid_hex_color = not re.match(hex_color, color)
+
+    # Check if it's a named matplotlib color
+    invalid_matplotlib_color = color.lower() not in mcolors.CSS4_COLORS
+
+    if invalid_hex_color and invalid_matplotlib_color:
         raise ValueError(
             f"{param_name} must be a valid hex color (#RRGGBB or #RGB) "
             f"or named matplotlib color. You've supplied: {color}"
@@ -110,26 +103,31 @@ def validate_color(color: str, param_name: str = "color") -> None:
 # Positive Numeric Values
 ###############################################################################
 """
-Check if a string is a valid color specification.
-
-Accepts hex colors (#RRGGBB or #RGB) and named matplotlib colors.
+Internal validator for positive int/float values. Raises on invalid.
 
 Parameters
 ----------
-number : str
-    Color string to validate
+param_name: str
+    Name of the number parameter to be checked in the parent function.
+number : float, int
+    Number to check
+
+Raises
+------
+ValueError
+    If number is not a positive float or integer.
 
 Returns
 -------
 bool
-    True if valid color, False otherwise
+    True if valid positive int or float
 """
 
 
-def is_positive_number(number: float | int) -> bool:
+def is_positive_number(param_name: str, number: float | int) -> bool:
     if not isinstance(number, (int, float)) or number <= 0:
         raise ValueError(
-            f"number must be a positive integer or float (number with decimals). You've supplied: {number}"
+            f"{param_name} must be a positive integer or float (number with decimals). You've supplied: {number}"
         )
 
     return True
