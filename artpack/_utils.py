@@ -8,7 +8,6 @@ from matplotlib import colors as mcolors
 # Type validation
 ###############################################################################
 
-
 def _check_type(param_name: str, param: Any, expected_type: str) -> bool:
     """
     Internal type checker for dev. Raises if invalid.
@@ -45,21 +44,28 @@ def _check_type(param_name: str, param: Any, expected_type: str) -> bool:
         "pandas.core.frame.DataFrame",
     )
 
+# Internal catch for devs to ensure accurate typing
     if expected_type not in dict_types:
         raise ValueError(
             f"expected_type most be one of: {', '.join(dict_types)}. "
             f"You've supplied: {expected_type}"
         )
 
+# End user error messaging
+    invalid_type = isinstance(param, eval(expected_type)) is False
 
-# PICK UP HERE. Add type check and finish doc string cleanup for others.
+    if invalid_type:
+        type_input = type(param).__name__
+        raise TypeError(
+            f"{param_name} should be of type {expected_type}. "
+            f"You've supplied a {type_input} object"
+        )
+
 
 
 ###############################################################################
 # Color validation
 ###############################################################################
-
-
 def _is_valid_color(param_name: str, color: str):
     """
     Internal check to validate color string (hex or matplotlib named). Raises if invalid.
@@ -79,7 +85,7 @@ def _is_valid_color(param_name: str, color: str):
 
     """
     if not isinstance(color, str):
-        type_input = type(color)
+        type_input = type(color).__name__
 
         raise TypeError(
             f"{param_name} should be a string. " f"You've supplied a {type_input}"
