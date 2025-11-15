@@ -4,11 +4,13 @@ import re
 from typing import Any
 from matplotlib import colors as mcolors
 
+
 ###############################################################################
 # Type validation
 ###############################################################################
-
-def _check_type(param_name: str, param: Any, expected_type: str) -> bool:
+def _check_type(
+    param_name: str, param: Any, expected_type: type | tuple[type, ...]
+) -> bool:
     """
     Internal type checker for dev. Raises if invalid.
 
@@ -18,49 +20,32 @@ def _check_type(param_name: str, param: Any, expected_type: str) -> bool:
         Name of the parameter to be checked in the parent function.
     param : Any, required
         Object to check the type of
-    expected_type : str, required
-        A string value of the expected type to check `param` for.
+    expected_type : type or tuple of types, required
+        The expected type(s) to check `param` against.
 
     Raises
     ------
-    ValueError
+    TypeError
         If type of `param` does not match the `expected_type` value.
 
     Returns
     -------
     bool
-        Returns True if `param` matches the `expected_type`. Otherwise, will raise.
+        Returns True if `param` matches the `expected_type`.
     """
-
-    dict_types = (
-        "int",
-        "float",
-        "complex",
-        "bool",
-        "str",
-        "tuple",
-        "list",
-        "polars.dataframe.frame.DataFrame",
-        "pandas.core.frame.DataFrame",
-    )
-
-# Internal catch for devs to ensure accurate typing
-    if expected_type not in dict_types:
-        raise ValueError(
-            f"expected_type most be one of: {', '.join(dict_types)}. "
-            f"You've supplied: {expected_type}"
+    if not isinstance(param, expected_type):
+        expected_type_name = (
+            expected_type.__name__
+            if isinstance(expected_type, type)
+            else " or ".join(t.__name__ for t in expected_type)
         )
 
-# End user error messaging
-    invalid_type = isinstance(param, eval(expected_type)) is False
+        actual_type_name = type(param).__name__
 
-    if invalid_type:
-        type_input = type(param).__name__
         raise TypeError(
-            f"{param_name} should be of type {expected_type}. "
-            f"You've supplied a {type_input} object"
+            f"`{param_name}` should be of type `{expected_type_name}`.\n"
+            f"You've supplied a `{actual_type_name}` object"
         )
-
 
 
 ###############################################################################
@@ -84,12 +69,9 @@ def _is_valid_color(param_name: str, color: str):
         If color is not a valid hexadecimal webcolor or a named matplotlib color.
 
     """
+    # Give a helpful type error message
     if not isinstance(color, str):
-        type_input = type(color).__name__
-
-        raise TypeError(
-            f"{param_name} should be a string. " f"You've supplied a {type_input}"
-        )
+        _check_type(param_name, color, str)
 
     # Check if it's a valid hex color (6 or 3 digits)
     hex_color = r"^#(?:[0-9a-fA-F]{3}){1,2}$"
@@ -100,8 +82,8 @@ def _is_valid_color(param_name: str, color: str):
 
     if invalid_hex_color and invalid_matplotlib_color:
         raise ValueError(
-            f"{param_name} must be a valid hex color (#RRGGBB or #RGB) "
-            f"or named matplotlib color. You've supplied: {color}"
+            f"`{param_name}` must be a valid hex color (#RRGGBB or #RGB) "
+            f"or a named matplotlib color. You've supplied: '{color}'"
         )
 
 
@@ -130,10 +112,8 @@ bool
 """
 
 
-def is_positive_number(param_name: str, number: float | int) -> bool:
+def _is_positive_number(param_name: str, number: float | int) -> bool:
     if not isinstance(number, (int, float)) or number <= 0:
         raise ValueError(
-            f"{param_name} must be a positive integer or float (number with decimals). You've supplied: {number}"
+            f"`{param_name}` must be a positive integer or float (number with decimals).\nYou've supplied: `{number}`"
         )
-
-    return True
