@@ -9,3 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `art_pals()` Custom-built artpack Color Palettes
+
+### Internal
+- Added internal utility functions: `_check_type`, `_is_valid_color`, `_is_positive_number`
+- Added and improved test coverage for utility functions
