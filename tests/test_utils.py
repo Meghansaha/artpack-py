@@ -45,9 +45,9 @@ def test_is_valid_color_raises_on_invalid_color():
     with pytest.raises(ValueError) as exc_info:
         _is_valid_color("hex_color", bad_hex_color)
 
-        error_msg = str(exc_info)
-        assert "`hex_color` must be a valid hex color (#RRGGBB or #RGB)"
-        assert "or a named matplotlib color. You've supplied: '#e7223'"
+    error_msg = str(exc_info)
+    assert "`hex_color` must be a valid hex color (#RRGGBB or #RGB)"
+    assert "or a named matplotlib color. You've supplied: '#e7223'"
 
 
 def test_is_valid_color_accepts_valid_matplotlib_color_name():
