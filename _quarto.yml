@@ -15,6 +15,9 @@ website:
         href: index.qmd
       - text: "Reference"
         href: reference/index.qmd
+      - text: Changelog
+        href: CHANGELOG.qmd
+    
     right:
       - icon: github
         href: https://github.com/Meghansaha/artpack-py
