@@ -6,6 +6,12 @@ from typing import List
 import numpy as np
 import polars as pl
 from matplotlib import colors as mcolors
+from artpack._utils import (
+    _check_type,
+    _is_positive_number,
+    _is_valid_color,
+    _check_min_points,
+)
 
 
 def circle_data(
@@ -19,27 +25,32 @@ def circle_data(
     group_prefix: str = "circle_",
 ) -> pl.DataFrame:
     """
-    Data Generation for Circles. A tool for creating a data frame of values that creates a circle with a specified radius
-    when plotted. The `geom_path` and `geom_polygon` geoms are recommended with this data for use in `plotnine` for generative art.
+    Generate data for plotting a circle as a DataFrame.
+
+    Creates a data frame of (x, y) coordinates representing a circle with a specified center and radius.
+
+    Notes
+    -----
+    The output is designed for use with `geom_path` and `geom_polygon` geoms in `plotnine` for generative art.
 
     Parameters
     ----------
-    x : float
+    x : float or int
         The center x-coordinate of the circle.
-    y : float
+    y : float or int
         The center y-coordinate of the circle.
-    radius : float
+    radius : float or int
         The radius of the circle. Must be greater than 0.
-    color : str, optional
+    color : str, optional, default None
         The outline color of the circle. Default None.
-    fill : str, optional
+    fill : str, optional, default None
         The fill color of the circle. Default None.
     n_points : int, default 100
-        Number of points to generate along the circle's perimeter.
+            Number of points to generate along the circle's perimeter. Must be an integer >= 10 for a reasonable approximation of a circle.
     group_var : bool, default False
         Whether to include a grouping variable in the output.
     group_prefix : str, default "circle_"
-        Prefix for the grouping variable name.
+        Prefix for the grouping variable name. Required if `group_var` is True.
 
     Returns
     -------
@@ -61,6 +72,24 @@ def circle_data(
     ###############################################################################
     # Input Checks
     ###############################################################################
+    # Numeric Checks
+    _check_type("x", x, (float, int))
+    _check_type("y", y, (float, int))
+    _check_type("radius", radius, (float, int))
+    _check_type("n_points", n_points, int)
+    _is_positive_number(radius)
+    _check_min_points(n_points, 100, "circle")
+
+    # Color Checks
+    if color is not None:
+        _is_valid_color(color)
+
+    if fill is not None:
+        _is_valid_color(fill)
+
+    # Grouping Checks
+    if group_var:
+        _check_type(group_prefix, str)
 
     ###############################################################################
     # Data Generation
