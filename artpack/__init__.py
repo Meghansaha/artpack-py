@@ -1,10 +1,10 @@
-from .palettes import art_pals
-from .palettes import pals
-from artpack.circles import circle_data
+from .palettes import art_pals, pals
+from .circles import circle_data
 
-# from artpack.squares import square_data
-# from artpack.waves import wave_data
-# from artpack.grid import grid_maker
-# from artpack.packer import packer
+__all__ = ["art_pals", "pals", "circle_data"]
 
-__all__ = ["circle_data"]  # , 'square_data', 'wave_data', 'grid_maker', 'packer'
+# Future exports:
+# from .squares import square_data
+# from .waves import wave_data
+# from .grid import grid_maker
+# from .packer import packer
