@@ -3,7 +3,7 @@
 ###############################################################################
 import random
 from typing import List
-import numpy as np
+from numpy import linspace, pi
 import polars as pl
 from matplotlib import colors as mcolors
 from artpack._utils import (
@@ -94,3 +94,5 @@ def circle_data(
     ###############################################################################
     # Data Generation
     ###############################################################################
+    # Create Theta
+    theta = linspace(0, (2 * pi), n_points)
