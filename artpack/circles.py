@@ -1,11 +1,8 @@
 ###############################################################################
 # artpack/circle_data.py
 ###############################################################################
-import random
-from typing import List
-from numpy import linspace, pi
+from numpy import linspace, pi, cos, sin
 import polars as pl
-from matplotlib import colors as mcolors
 from artpack._utils import (
     _check_type,
     _is_positive_number,
@@ -22,7 +19,7 @@ def circle_data(
     fill: str = None,
     n_points: int = 100,
     group_var: bool = False,
-    group_prefix: str = "circle_",
+    group_value: str = "circle_",
 ) -> pl.DataFrame:
     """
     Generate data for plotting a circle as a DataFrame.
@@ -49,7 +46,7 @@ def circle_data(
             Number of points to generate along the circle's perimeter. Must be an integer >= 10 for a reasonable approximation of a circle.
     group_var : bool, default False
         Whether to include a grouping variable in the output.
-    group_prefix : str, default "circle_"
+    group_value : str, default "circle_"
         Prefix for the grouping variable name. Required if `group_var` is True.
 
     Returns
@@ -65,7 +62,17 @@ def circle_data(
     Examples
     --------
     ```python
+    # Creating one circle
+    from artpack.circles import circle_data
+    from plotnine import ggplot, aes, geom_path, coord_equal, theme, geom_polygon
 
+    one_circle = circle_data(x = 0, y = 0, radius = 5)
+
+    (
+    ggplot(one_circle, aes(x, y))
+    + geom_path(color = "green")
+    + coord_equal()
+    )
     ```
     """
 
@@ -77,22 +84,42 @@ def circle_data(
     _check_type("y", y, (float, int))
     _check_type("radius", radius, (float, int))
     _check_type("n_points", n_points, int)
-    _is_positive_number(radius)
+    _is_positive_number("radius", radius)
     _check_min_points(n_points, 100, "circle")
 
     # Color Checks
     if color is not None:
-        _is_valid_color(color)
+        _is_valid_color("color", color)
 
     if fill is not None:
-        _is_valid_color(fill)
+        _is_valid_color("fill", fill)
 
     # Grouping Checks
     if group_var:
-        _check_type(group_prefix, str)
+        _check_type("group_value", group_value, str)
 
     ###############################################################################
     # Data Generation
     ###############################################################################
     # Create Theta
     theta = linspace(0, (2 * pi), n_points)
+
+    circle_schema = {"x": pl.Float32, "y": pl.Float32}
+
+    circle_data = {"x": cos(theta) * radius, "y": sin(theta) * radius}
+
+    if color is not None:
+        circle_data.update({"color": color})
+        circle_schema.update({"color": pl.Utf8})
+
+    if fill is not None:
+        circle_data.update({"fill": fill})
+        circle_schema.update({"fill": pl.Utf8})
+
+    if group_var:
+        circle_data.update({"group": group_value})
+        circle_schema.update({"group": pl.Utf8})
+
+    df = pl.DataFrame(circle_data, circle_schema)
+
+    return df
