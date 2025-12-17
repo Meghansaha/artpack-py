@@ -104,10 +104,12 @@ def circle_data(
     # Create Theta
     theta = linspace(0, (2 * pi), n_points)
 
+    # Create circle schema
     circle_schema = {"x": pl.Float32, "y": pl.Float32}
 
+    # Calc the circle
     circle_data = {"x": cos(theta) * radius, "y": sin(theta) * radius}
-
+    # Conditional checks to add extra vars
     if color is not None:
         circle_data.update({"color": color})
         circle_schema.update({"color": pl.Utf8})
