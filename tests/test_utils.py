@@ -21,7 +21,7 @@ def test_check_type_raises_with_mismatched_type():
         _check_type("test_object", test_object, int)
 
     error_msg = str(exc_info.value)
-    assert ("`test_object` should be of type `int`.") in error_msg
+    assert ("`test_object` should be of type `int`.\n") in error_msg
     assert ("You've supplied a `str` object") in error_msg
 
 
