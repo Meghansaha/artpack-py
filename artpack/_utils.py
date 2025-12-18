@@ -35,7 +35,7 @@ def _check_type(
     """
     if not isinstance(param, expected_type):
         expected_type_name = (
-            expected_type.__name__
+            "`" + expected_type.__name__ + "`"
             if isinstance(expected_type, type)
             else " or ".join("`" + t.__name__ + "`" for t in expected_type)
         )
