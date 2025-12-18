@@ -35,15 +35,15 @@ def _check_type(
     """
     if not isinstance(param, expected_type):
         expected_type_name = (
-            expected_type.__name__
+            "`" + expected_type.__name__ + "`"
             if isinstance(expected_type, type)
-            else " or ".join(t.__name__ for t in expected_type)
+            else " or ".join("`" + t.__name__ + "`" for t in expected_type)
         )
 
         actual_type_name = type(param).__name__
 
         raise TypeError(
-            f"`{param_name}` should be of type `{expected_type_name}`.\n"
+            f"`{param_name}` should be of type {expected_type_name}.\n"
             f"You've supplied a `{actual_type_name}` object"
         )
 
