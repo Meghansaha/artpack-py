@@ -12,9 +12,9 @@ from artpack._utils import (
 
 
 def circle_data(
-    x: float,
-    y: float,
-    radius: float,
+    x: float | int,
+    y: float | int,
+    radius: float | int,
     color: str = None,
     fill: str = None,
     n_points: int = 100,
