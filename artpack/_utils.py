@@ -83,7 +83,7 @@ def _is_valid_color(param_name: str, color: str):
     if invalid_hex_color and invalid_matplotlib_color:
         raise ValueError(
             f"`{param_name}` must be a valid hex color (#RRGGBB or #RGB) "
-            f"or a named matplotlib color. You've supplied: '{color}'"
+            f"or a named matplotlib color.\nYou've supplied: '{color}'"
         )
 
 
