@@ -3,7 +3,10 @@ website:
   - contents:
     - reference/index.qmd
     - contents:
+      - reference/circle_data.qmd
+      section: Asset Creation Tools
+    - contents:
       - reference/art_pals.qmd
-      section: Data Color Palette Tools
+      section: Color Palette Tools
     id: reference
   - id: dummy-sidebar

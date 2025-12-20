@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2025-12-20
+
+### Added
+- `circle_data()`: Generate (`x`, `y`) coordinates and optional color/fill/group columns for plotting circles as a Polars DataFrame.
+- Internal: Added `_check_min_points` utility for validating minimum points in shape-generating functions.
+
 ## [Unreleased] - 2025-10-08
 
 ### Added

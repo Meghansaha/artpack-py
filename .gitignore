@@ -40,3 +40,5 @@ dev/
 
 
 .python-version
+
+**/*.quarto_ipynb
