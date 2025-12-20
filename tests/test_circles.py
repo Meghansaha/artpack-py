@@ -6,10 +6,12 @@ import re
 import random
 from unittest.mock import patch
 from artpack import circle_data
+from polars import DataFrame
 
 
 # Input validations
-## Numeric type checks
+# ------------------------------------------------------------------------------
+## Numeric type checks----
 circle_data_numeric_error_cases = [
     {
         "id": "x is not a number",
@@ -55,12 +57,13 @@ circle_data_numeric_error_cases = [
     circle_data_numeric_error_cases,
     ids=[case["id"] for case in circle_data_numeric_error_cases],
 )
-def test_numeric_error_messages(case):
+def test_circle_data_numeric_error_messages(case):
     with pytest.raises(case["exc"], match=re.escape(case["error_msg"])):
         circle_data(**case["kwargs"])
 
 
-## String type checks
+# ------------------------------------------------------------------------------
+## String type checks----
 circle_data_string_error_cases = [
     {
         "id": "Color is invalid",
@@ -94,6 +97,47 @@ circle_data_string_error_cases = [
     circle_data_string_error_cases,
     ids=[case["id"] for case in circle_data_string_error_cases],
 )
-def test_string_error_messages(case):
+def test_circle_data_string_error_messages(case):
     with pytest.raises(case["exc"], match=re.escape(case["error_msg"])):
         circle_data(**case["kwargs"])
+
+
+# ------------------------------------------------------------------------------
+# Output validations----
+def test_circle_data_works():
+    df_circle = circle_data(x=0, y=0, radius=50)
+    assert isinstance(df_circle, DataFrame)
+
+
+def test_circle_data_color_works():
+    df_circle = circle_data(x=0, y=0, radius=50, color="#000000")
+    assert isinstance(df_circle, DataFrame)
+    assert len(df_circle.columns) == 3
+
+
+def test_circle_data_fill_works():
+    df_circle = circle_data(x=0, y=0, radius=50, fill="pink")
+    assert isinstance(df_circle, DataFrame)
+    assert len(df_circle.columns) == 3
+
+
+def test_circle_data_group_works():
+    df_circle = circle_data(
+        x=0, y=0, radius=50, group_var=True, group_value="A Cool Group"
+    )
+    assert isinstance(df_circle, DataFrame)
+    assert len(df_circle.columns) == 3
+
+
+def test_all_circle_data_params_works():
+    df_circle = circle_data(
+        x=0,
+        y=0,
+        radius=50,
+        color="red",
+        fill="blue",
+        group_var=True,
+        group_value="A Cool Group",
+    )
+    assert isinstance(df_circle, DataFrame)
+    assert len(df_circle.columns) == 5

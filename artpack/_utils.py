@@ -120,7 +120,7 @@ def _is_positive_number(param_name: str, number: float | int) -> bool:
 
 
 ###############################################################################
-# Positive Numeric Values
+# Minimum numeric values
 ###############################################################################
 """
 Internal validator for minimum n_points in *_data functions. Raises on invalid.
