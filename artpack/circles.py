@@ -43,7 +43,7 @@ def circle_data(
     fill : str, optional, default None
         The fill color of the circle. Default None.
     n_points : int, default 100
-            Number of points to generate along the circle's perimeter. Must be an integer >= 10 for a reasonable approximation of a circle.
+        Number of points to generate along the circle's perimeter. Must be an integer >= 10 for a reasonable approximation of a circle.
     group_var : bool, default False
         Whether to include a grouping variable in the output.
     group_value : str, default "circle_"
@@ -51,8 +51,9 @@ def circle_data(
 
     Returns
     -------
-    pl.DataFrame
+    data : pl.DataFrame
         A DataFrame containing the circle's coordinates with columns:
+
         - x: x-coordinates of points along the circle's perimeter
         - y: y-coordinates of points along the circle's perimeter
         - color: outline color (if specified)
@@ -62,18 +63,13 @@ def circle_data(
     Examples
     --------
     ```python
-    # Creating one circle
     from artpack.circles import circle_data
-    from plotnine import ggplot, aes, geom_path, coord_equal, theme, geom_polygon
+    from plotnine import ggplot, aes, geom_path, coord_equal
 
-    one_circle = circle_data(x = 0, y = 0, radius = 5)
-
-    (
-    ggplot(one_circle, aes(x, y))
-    + geom_path(color = "green")
-    + coord_equal()
-    )
+    one_circle = circle_data(x=0, y=0, radius=5)
+    (ggplot(one_circle, aes("x", "y")) + geom_path(color="green") + coord_equal())
     ```
+    ![green circle](../assets/img/circle_data-ex.png)
     """
 
     ###############################################################################
@@ -102,26 +98,26 @@ def circle_data(
     # Data Generation
     ###############################################################################
     # Create Theta
-    theta = linspace(0, (2 * pi), n_points)
+    theta = linspace(0, 2 * pi, n_points)
+    x_vals = cos(theta) * radius + x
+    y_vals = sin(theta) * radius + y
 
     # Create circle schema
     circle_schema = {"x": pl.Float32, "y": pl.Float32}
+    circle_data_dict = {"x": x_vals, "y": y_vals}
 
-    # Calc the circle
-    circle_data = {"x": cos(theta) * radius, "y": sin(theta) * radius}
     # Conditional checks to add extra vars
     if color is not None:
-        circle_data.update({"color": color})
-        circle_schema.update({"color": pl.Utf8})
+        circle_data_dict["color"] = color
+        circle_schema["color"] = pl.Utf8
 
     if fill is not None:
-        circle_data.update({"fill": fill})
-        circle_schema.update({"fill": pl.Utf8})
+        circle_data_dict["fill"] = fill
+        circle_schema["fill"] = pl.Utf8
 
     if group_var:
-        circle_data.update({"group": group_value})
-        circle_schema.update({"group": pl.Utf8})
+        circle_data_dict["group"] = group_value
+        circle_schema["group"] = pl.Utf8
 
-    df = pl.DataFrame(circle_data, circle_schema)
-
+    df = pl.DataFrame(circle_data_dict, schema=circle_schema)
     return df

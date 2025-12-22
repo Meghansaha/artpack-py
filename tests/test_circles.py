@@ -141,3 +141,18 @@ def test_all_circle_data_params_works():
     )
     assert isinstance(df_circle, DataFrame)
     assert len(df_circle.columns) == 5
+
+
+# ------------------------------------------------------------------------------
+# Docstring example tests
+def test_circle_data_docstring_examples():
+    """
+    To run doctests in this module, use:
+        pytest --doctest-modules artpack/circles.py
+    This will automatically test the examples in the docstring of circle_data.
+    """
+    import doctest
+    import artpack.circles
+
+    failures, _ = doctest.testmod(artpack.circles, verbose=False)
+    assert failures == 0

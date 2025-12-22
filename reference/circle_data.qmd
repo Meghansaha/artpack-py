@@ -36,22 +36,17 @@ The output is designed for use with `geom_path` and `geom_polygon` geoms in `plo
 
 ## Returns {.doc-section .doc-section-returns}
 
-| Name   | Type         | Description                                                                                                                                                                                                                                                                                                 |
-|--------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        | pl.DataFrame | A DataFrame containing the circle's coordinates with columns: - x: x-coordinates of points along the circle's perimeter - y: y-coordinates of points along the circle's perimeter - color: outline color (if specified) - fill: fill color (if specified) - group: grouping variable (if group_var is True) |
+| Name   | Type         | Description                                                                                                                                                                                                                                                                                                  |
+|--------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data   | pl.DataFrame | A DataFrame containing the circle's coordinates with columns:  - x: x-coordinates of points along the circle's perimeter - y: y-coordinates of points along the circle's perimeter - color: outline color (if specified) - fill: fill color (if specified) - group: grouping variable (if group_var is True) |
 
 ## Examples {.doc-section .doc-section-examples}
 
 ```python
-# Creating one circle
 from artpack.circles import circle_data
-from plotnine import ggplot, aes, geom_path, coord_equal, theme, geom_polygon
+from plotnine import ggplot, aes, geom_path, coord_equal
 
-one_circle = circle_data(x = 0, y = 0, radius = 5)
-
-(
-ggplot(one_circle, aes("x", "y"))
-+ geom_path(color = "green")
-+ coord_equal()
-)
+one_circle = circle_data(x=0, y=0, radius=5)
+(ggplot(one_circle, aes("x", "y")) + geom_path(color="green") + coord_equal())
 ```
+![green circle](../assets/img/circle_data-ex.png)
