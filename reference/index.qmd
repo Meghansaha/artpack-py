@@ -1,8 +1,16 @@
 # Function reference {.doc .doc-index}
 
-## Data Color Palette Tools
+## Asset Creation Tools
 
-Functions that help with color-related tasks
+Functions that help with making data for generative art.
+
+| | |
+| --- | --- |
+| [circle_data](circle_data.qmd#artpack.circle_data) | Generate data for plotting a circle as a DataFrame. |
+
+## Color Palette Tools
+
+Functions that help with color-related tasks.
 
 | | |
 | --- | --- |

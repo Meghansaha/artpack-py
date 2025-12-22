@@ -83,7 +83,7 @@ def _is_valid_color(param_name: str, color: str):
     if invalid_hex_color and invalid_matplotlib_color:
         raise ValueError(
             f"`{param_name}` must be a valid hex color (#RRGGBB or #RGB) "
-            f"or a named matplotlib color. You've supplied: '{color}'"
+            f"or a named matplotlib color.\nYou've supplied: '{color}'"
         )
 
 
@@ -117,3 +117,44 @@ def _is_positive_number(param_name: str, number: float | int) -> bool:
         raise ValueError(
             f"`{param_name}` must be a positive integer or float (number with decimals).\nYou've supplied: `{number}`"
         )
+
+
+###############################################################################
+# Minimum numeric values
+###############################################################################
+"""
+Internal validator for minimum n_points in *_data functions. Raises on invalid.
+
+Parameters
+----------
+number : int
+    Number to check
+
+min_points : int
+    Minimum allowed value for the number of points used to approximate a shape.
+
+shape : str
+    Name of the shape being validated (used for error messages or context). Must be a non-empty string.
+
+Raises
+------
+ValueError
+    If `number` is not greater than or equal to `min_points`.
+
+Returns
+-------
+bool
+    True if `number` is greater than or equal to `min_points`.
+"""
+
+
+def _check_min_points(number: int, min_points: int, shape: str) -> bool:
+    if shape is None or not isinstance(shape, str) or not shape:
+        raise TypeError(
+            "`shape` must be a non-empty string identifying the shape (e.g., 'circle')."
+        )
+    if not isinstance(number, int) or number < min_points:
+        raise ValueError(
+            f"`n_points` must be >= {min_points} for a reasonable approximation of a {shape}.\nYou've supplied: `{number}`"
+        )
+    return True
