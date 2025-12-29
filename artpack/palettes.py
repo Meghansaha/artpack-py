@@ -117,26 +117,6 @@ def art_pals(
     pal : str, optional
         A character string of the desired artpack palette. Default is "ocean".
 
-        The 18 artpack palettes include:
-        - "arctic" - Icy blue and white colors
-        - "beach" - Sand-colored tans and ocean-colored blue colors
-        - "bw" - A gradient of black to white colors
-        - "brood" - A gradient of different shades of dark gray and black colors
-        - "cosmos" - Nebula-inspired blue, purple, and pink colors
-        - "explorer" - Pokemon-type inspired colors
-        - "gemstones" - Birthstone/Mineral-inspired colors
-        - "grays" - A gradient of dark, medium, and light gray colors
-        - "icecream" - A light pastel palette of cream, blue, brown, and pink colors
-        - "imagination" - 90's school supply-inspired colors
-        - "majestic" - Shades of majestic purple colors
-        - "nature" - A mix of tan, brown, green, and red colors
-        - "neon" - A neon spectrum of rainbow colors
-        - "ocean" - A gradient of dark to light blue colors
-        - "plants" - A gradient of dark to light green colors
-        - "rainbow" - A vibrant mix of rainbow colors
-        - "sunnyside" - A retro-inspired mix of pink, orange, and yellow colors
-        - "super" - A marveling mix of heroic colors
-
     n : int, optional
         The number of colors desired in the output. Default is 5.
         Must be a positive integer with a value greater than 0.
@@ -149,9 +129,33 @@ def art_pals(
         Determines if the colors in the palette appear in a randomized order.
         Default is False.
 
+    Notes
+    -----
+    The 18 artpack palettes include:
+
+    - "arctic" - Icy blue and white colors
+    - "beach" - Sand-colored tans and ocean-colored blue colors
+    - "bw" - A gradient of black to white colors
+    - "brood" - A gradient of different shades of dark gray and black colors
+    - "cosmos" - Nebula-inspired blue, purple, and pink colors
+    - "explorer" - Pokemon-type inspired colors
+    - "gemstones" - Birthstone/Mineral-inspired colors
+    - "grays" - A gradient of dark, medium, and light gray colors
+    - "icecream" - A light pastel palette of cream, blue, brown, and pink colors
+    - "imagination" - 90's school supply-inspired colors
+    - "majestic" - Shades of majestic purple colors
+    - "nature" - A mix of tan, brown, green, and red colors
+    - "neon" - A neon spectrum of rainbow colors
+    - "ocean" - A gradient of dark to light blue colors
+    - "plants" - A gradient of dark to light green colors
+    - "rainbow" - A vibrant mix of rainbow colors
+    - "sunnyside" - A retro-inspired mix of pink, orange, and yellow colors
+    - "super" - A marveling mix of heroic colors
+
+
     Returns
     -------
-    list of str
+    colors : List[str]
         A list of hexadecimal color codes.
 
     Examples
@@ -174,7 +178,7 @@ def art_pals(
         p9.ggplot(data=df_dots, mapping=p9.aes("x", "y"))
         + p9.theme_void()
         + p9.geom_point(
-                shape="s",
+                shape="o",
                 fill=df_dots["fills"].to_list(),
                 color="#000000",
                 size=10,
@@ -182,7 +186,7 @@ def art_pals(
                 )
     )
     ```
-    ![artpack palettes]()
+    ![](../assets/img/art_pals-ex.png){fig-cap="" fig-alt="artpack palettes"}
     """
 
     ###############################################################################
@@ -209,10 +213,10 @@ def art_pals(
 
     # direction validation
     direction = direction.lower()
-    valid_directions = ", ".join(["regular", "reg", "reverse", "rev"])
+    valid_directions = ["regular", "reg", "reverse", "rev"]
     if direction not in valid_directions:
         raise ValueError(
-            f"'{direction}' is not a valid direction. `direction` must be one of: {valid_directions}"
+            f"'{direction}' is not a valid direction. `direction` must be one of: {', '.join(valid_directions)}"
         )
 
     # randomize validation

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  pre-render: scripts/sync_readme.py
+  post-render: scripts/post-render.py
 
 website:
   title: "artpack"
@@ -41,7 +43,12 @@ quartodoc:
   package: artpack
   sidebar: reference/_sidebar.yml
   sections:
-    - title: "Data Color Palette Tools"
-      desc: "Functions that help with color-related tasks"
+    - title: "Asset Creation Tools"
+      desc: "Functions that help with making data for generative art."
+      contents:
+        - name: "circle_data"
+    - title: "Color Palette Tools"
+      desc: "Functions that help with color-related tasks."
       contents:
         - name: "art_pals"
+

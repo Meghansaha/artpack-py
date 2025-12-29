@@ -43,6 +43,7 @@ colors_random = art_pals("rainbow", n = 10, randomize = True)
 
 **Currently implemented:**
 - ✅ Color palette generation (`art_pals()`)
+- ✅ Circle data generation (`circle_data()`)
 - ✅ 100% test coverage
 - ✅ CI/CD with GitHub Actions
 

@@ -6,14 +6,13 @@
 
 --------------------------------------------------------------------------------
 
-Reviewer Checklist (if item does not apply, mark is as complete)
+Reviewer Checklist (if item does not apply, mark is complete)
 
 - [ ] PR branch has pulled the most recent updates from main branch.
 - [ ] If a bug was fixed, a unit test was added.
 - [ ] Code coverage is suitable for any new functions/features: `pytest --cov=<package_name> --cov-report=term-missing`
 - [ ] Documentation builds without errors: `uv run quartodoc build` (artpack-py uses quartodoc)
-- [ ] Code passes linting checks: `ruff check .`
-- [ ] Code is formatted consistently: `black .` or `ruff format .`
+- [ ] Code is formatted consistently: `black .`
 - [ ] **All** GitHub Action workflows pass with a :white_check_mark:
 
 When the branch is ready to be merged into main:
