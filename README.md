@@ -1,7 +1,7 @@
 # artpack
 
 <p align="center" width="100%">
-<img src="assets/img/artpack-py-logo.png" alt="Hexagonal logo with colorful, flowing wave patterns in rainbow hues. White text reads 'aRtpack' with a paintbrush accent, and Python logo in bottom right corner.">
+<img src="https://raw.githubusercontent.com/Meghansaha/artpack-py/main/assets/img/artpack-py-logo.png" alt="Hexagonal logo with colorful, flowing wave patterns in rainbow hues. White text reads 'aRtpack' with a paintbrush accent, and Python logo in bottom right corner.">
 </p>
 
 Python port of the R package [artpack](https://CRAN.R-project.org/package=artpack), bringing generative art color palettes to the Python ecosystem.
