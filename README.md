@@ -57,7 +57,7 @@ colors_random = art_pals("rainbow", n = 10, randomize = True)
 
 ## Links
 
-- **Python Package (PyPI):** [artpack-py](https://pypi.org/project/artpack-py/)
+- **Python Package (PyPI):** [artpack-py](https://pypi.org/project/artpack/)
 - **Original R Package (CRAN):** [artpack](https://CRAN.R-project.org/package=artpack)
 - **GitHub Repository:** [github.com/Meghansaha/artpack-py](https://github.com/Meghansaha/artpack-py)
 
