@@ -133,28 +133,30 @@ def art_pals(
     -----
     The 18 artpack palettes include:
 
-    - "arctic" – Icy blue and white colors
-    - "beach" – Sand-colored tans and ocean-colored blue colors
-    - "bw" – A gradient of black to white colors
-    - "brood" – A gradient of different shades of dark gray and black colors
-    - "cosmos" – Nebula-inspired blue, purple, and pink colors
-    - "explorer" – Pokemon-type inspired colors
-    - "gemstones" – Birthstone/Mineral-inspired colors
-    - "grays" – A gradient of dark, medium, and light gray colors
-    - "icecream" – A light pastel palette of cream, blue, brown, and pink colors
-    - "imagination" – 90's school supply-inspired colors
-    - "majestic" – Shades of majestic purple colors
-    - "nature" – A mix of tan, brown, green, and red colors
-    - "neon" – A neon spectrum of rainbow colors
-    - "ocean" – A gradient of dark to light blue colors
-    - "plants" – A gradient of dark to light green colors
-    - "rainbow" – A vibrant mix of rainbow colors
-    - "sunnyside" – A retro-inspired mix of pink, orange, and yellow colors
-    - "super" – A marveling mix of heroic colors
+    - "arctic" - Icy blue and white colors
+    - "beach" - Sand-colored tans and ocean-colored blue colors
+    - "bw" - A gradient of black to white colors
+    - "brood" - A gradient of different shades of dark gray and black colors
+    - "cosmos" - Nebula-inspired blue, purple, and pink colors
+    - "explorer" - Pokemon-type inspired colors
+    - "gemstones" - Birthstone/Mineral-inspired colors
+    - "grays" - A gradient of dark, medium, and light gray colors
+    - "icecream" - A light pastel palette of cream, blue, brown, and pink colors
+    - "imagination" - 90's school supply-inspired colors
+    - "majestic" - Shades of majestic purple colors
+    - "nature" - A mix of tan, brown, green, and red colors
+    - "neon" - A neon spectrum of rainbow colors
+    - "ocean" - A gradient of dark to light blue colors
+    - "plants" - A gradient of dark to light green colors
+    - "rainbow" - A vibrant mix of rainbow colors
+    - "sunnyside" - A retro-inspired mix of pink, orange, and yellow colors
+    - "super" - A marveling mix of heroic colors
+
 
     Returns
     -------
-    A list of hexadecimal color codes.
+    colors : List[str]
+        A list of hexadecimal color codes.
 
     Examples
     --------
@@ -184,7 +186,7 @@ def art_pals(
                 )
     )
     ```
-    ![artpack palettes](../assets/img/art_pals-ex.png)
+    ![](../assets/img/art_pals-ex.png){fig-cap="" fig-alt="artpack palettes"}
     """
 
     ###############################################################################

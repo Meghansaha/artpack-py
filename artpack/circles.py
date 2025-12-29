@@ -55,9 +55,13 @@ def circle_data(
         A DataFrame containing the circle's coordinates with columns:
 
         - x: x-coordinates of points along the circle's perimeter
+
         - y: y-coordinates of points along the circle's perimeter
+
         - color: outline color (if specified)
+
         - fill: fill color (if specified)
+
         - group: grouping variable (if group_var is True)
 
     Examples
@@ -69,7 +73,7 @@ def circle_data(
     one_circle = circle_data(x=0, y=0, radius=5)
     (ggplot(one_circle, aes("x", "y")) + geom_path(color="green") + coord_equal())
     ```
-    ![green circle](../assets/img/circle_data-ex.png)
+    ![](../assets/img/circle_data-ex.png){fig-cap="" fig-alt="A green outline of a circle"}
     """
 
     ###############################################################################

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  pre-render: scripts/sync_readme.py
+  post-render: scripts/post-render.py
 
 website:
   title: "artpack"
