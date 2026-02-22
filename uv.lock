@@ -28,6 +28,7 @@ dependencies = [
     { name = "plotnine" },
     { name = "polars" },
     { name = "pyarrow" },
+    { name = "quartodoc" },
 ]
 
 [package.optional-dependencies]
@@ -51,6 +52,7 @@ requires-dist = [
     { name = "pyarrow" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0" },
+    { name = "quartodoc", specifier = ">=0.11.1" },
     { name = "quartodoc", marker = "extra == 'dev'", specifier = ">=0.11.1" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.15.2" },
 ]
