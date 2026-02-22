@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - 2026-02-21
+### Documentation
+- Restructured and expanded `README` with an updated example
+- Added more package badges
+- Updated package 
+
+### Internal
+- Updated and cleaned metadata
+- Added `uv.lock`
+- Set up CI/CD pipeline with GitHub Actions to run tests across Python 3.10, 3.11, 3.12, and 3.13
+- Integrated code coverage tracking with Codecov and automated coverage reports
+- Improved utility test coverage and refactored `pytest` assertions
+
 ## [0.2.0] - 2025-12-28
 
 ### Added
