@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 - Restructured and expanded `README` with an updated example
 - Added more package badges
-- Updated package 
+- Updated package description
 
 ### Internal
 - Updated and cleaned metadata
