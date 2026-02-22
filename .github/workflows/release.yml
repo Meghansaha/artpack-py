@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
       fail-fast: false
 
     steps:
@@ -31,7 +31,7 @@ jobs:
     needs: test-build
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
 
     steps:
@@ -49,15 +49,11 @@ jobs:
     - name: Build package
       run: uv build
 
-    - name: Publish to TestPyPI
-      if: github.event.release.prerelease == true
+    - name: Publish package
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        repository-url: https://test.pypi.org/legacy/
-
-    - name: Publish to PyPI
-      if: github.event.release.prerelease == false
-      uses: pypa/gh-action-pypi-publish@release/v1
+        # Publish prereleases to TestPyPI and regular releases to production PyPI
+        repository-url: ${{ github.event.release.prerelease && 'https://test.pypi.org/legacy/' || 'https://upload.pypi.org/legacy/' }}
 
 
 
