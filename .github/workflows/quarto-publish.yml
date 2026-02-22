@@ -24,25 +24,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v2
+
       - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.10"
+        run: uv python install 3.10
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
-          pip install quartodoc
+        run: uv sync --extra dev
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Build API docs
-        run: quartodoc build
+        run: uv run quartodoc build
 
       - name: Render Quarto site
-        run: quarto render
+        run: uv run quarto render
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
