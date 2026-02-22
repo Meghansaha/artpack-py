@@ -3,8 +3,6 @@
 ###############################################################################
 import pytest
 import re
-import random
-from unittest.mock import patch
 from artpack import circle_data
 from polars import DataFrame
 

@@ -2,9 +2,6 @@
 # _utils.py Test Suite
 ###############################################################################
 import pytest
-import re
-import random
-from unittest.mock import patch
 from artpack._utils import _check_type
 from artpack._utils import _is_valid_color
 from artpack._utils import _is_positive_number
@@ -51,8 +48,8 @@ def test_is_valid_color_raises_on_invalid_color():
         _is_valid_color("hex_color", bad_hex_color)
 
     error_msg = str(exc_info)
-    assert "`hex_color` must be a valid hex color (#RRGGBB or #RGB)"
-    assert "or a named matplotlib color. You've supplied: '#e7223'"
+    assert ("`hex_color` must be a valid hex color (#RRGGBB or #RGB)") in error_msg
+    assert ("or a named matplotlib color. You've supplied: '#e7223'") in error_msg
 
 
 def test_is_valid_color_accepts_valid_matplotlib_color_name():
