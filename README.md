@@ -76,7 +76,7 @@ df = concat(circles)
 )
 ```
 
-![_Rainbow dots example_](images/rainbow_dots.png){align='center'}
+![A row of eight colored circles of varying sizes on a dark background, arranged horizontally and evenly spaced.](images/rainbow_dots.png)
 
 ## Development Status
 
