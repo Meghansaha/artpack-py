@@ -1,10 +1,18 @@
 # artpack
 
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Codecov](https://codecov.io/gh/Meghansaha/artpack-py/branch/main/graph/badge.svg)](https://codecov.io/gh/Meghansaha/artpack-py)
+[![CI Build](https://github.com/Meghansaha/artpack-py/actions/workflows/tests.yml/badge.svg)](https://github.com/Meghansaha/artpack-py/actions)
+[![PyPI](https://img.shields.io/pypi/v/artpack)](https://pypi.org/project/artpack/#history)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Repo Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![License](https://img.shields.io/github/license/meghansaha/artpack-py)](https://github.com/Meghansaha/artpack-py/blob/main/LICENSE)
+
 <p align="center" width="100%">
 <img src="https://raw.githubusercontent.com/Meghansaha/artpack-py/main/assets/img/artpack-py-logo.png" alt="Hexagonal logo with colorful, flowing wave patterns in rainbow hues. White text reads 'aRtpack' with a paintbrush accent, and Python logo in bottom right corner.">
 </p>
 
-Python port of the R package [artpack](https://CRAN.R-project.org/package=artpack), bringing generative art color palettes to the Python ecosystem.
+Python port of the R package [artpack](https://CRAN.R-project.org/package=artpack), bringing easier generative art to the Python ecosystem.
 
 ## About
 The goal of artpack is to help generative artists of all levels create generative art in Python. The artpack package is intended for use with the [plotnine](https://plotnine.org) package.
