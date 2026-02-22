@@ -13,10 +13,11 @@ dependencies = [
     "plotnine>=0.12.0",
     "polars",
     "pyarrow",
+    "ruff>=0.15.2",
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "pytest-cov>=4.0", "quartodoc", "twine"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "quartodoc", "ruff", "mypy"]
 
 [project.urls]
 Homepage = "https://github.com/Meghansaha/artpack-py"
