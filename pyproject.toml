@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=7.0", "pytest-cov>=4.0", "quartodoc>=0.11.1", "ruff>=0.15.2", "mypy"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "quartodoc==0.11.1", "griffe<0.46", "ruff>=0.15.2", "mypy"]
 
 [project.urls]
 Homepage = "https://github.com/Meghansaha/artpack-py"

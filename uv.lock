@@ -33,6 +33,7 @@ dependencies = [
 
 [package.optional-dependencies]
 dev = [
+    { name = "griffe" },
     { name = "mypy" },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -43,6 +44,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "build", specifier = ">=1.3.0" },
+    { name = "griffe", marker = "extra == 'dev'", specifier = "<0.46" },
     { name = "matplotlib", specifier = "==3.8.4" },
     { name = "mypy", marker = "extra == 'dev'" },
     { name = "numpy", specifier = "==1.26.4" },
@@ -53,7 +55,7 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=4.0" },
     { name = "quartodoc", specifier = ">=0.11.1" },
-    { name = "quartodoc", marker = "extra == 'dev'", specifier = ">=0.11.1" },
+    { name = "quartodoc", marker = "extra == 'dev'", specifier = "==0.11.1" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.15.2" },
 ]
 provides-extras = ["dev"]
@@ -590,14 +592,14 @@ wheels = [
 
 [[package]]
 name = "griffe"
-version = "1.15.0"
+version = "0.45.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0d/0c/3a471b6e31951dce2360477420d0a8d1e00dea6cf33b70f3e8c3ab6e28e1/griffe-1.15.0.tar.gz", hash = "sha256:7726e3afd6f298fbc3696e67958803e7ac843c1cfe59734b6251a40cdbfb5eea", size = 424112, upload-time = "2025-11-10T15:03:15.52Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/58/4a/03376f5df8fdb9587cf96c606fe5f6c2f5a7aad1f4da4876ad9852535cd8/griffe-0.45.3.tar.gz", hash = "sha256:02ee71cc1a5035864b97bd0dbfff65c33f6f2c8854d3bd48a791905c2b8a44b9", size = 102296, upload-time = "2024-06-09T11:16:54.325Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/9c/83/3b1d03d36f224edded98e9affd0467630fc09d766c0e56fb1498cbb04a9b/griffe-1.15.0-py3-none-any.whl", hash = "sha256:6f6762661949411031f5fcda9593f586e6ce8340f0ba88921a0f2ef7a81eb9a3", size = 150705, upload-time = "2025-11-10T15:03:13.549Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/42/b31be87eebd91bde9f3557ae746e48da4f9142c7d01794492e78f2e8abf4/griffe-0.45.3-py3-none-any.whl", hash = "sha256:ed1481a680ae3e28f91a06e0d8a51a5c9b97555aa2527abc2664447cc22337d6", size = 120344, upload-time = "2024-06-09T11:16:51.403Z" },
 ]
 
 [[package]]
